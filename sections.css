@@ -1,0 +1,46 @@
+/* Distinct section surfaces; each band owns its readable foreground palette. */
+main > section{position:relative;background:var(--bg);color:var(--text)}
+main > section:not(.hero){padding-top:100px;padding-bottom:100px;border-top:1px solid var(--line)}
+body[data-theme=color] .hero{--bg:#eeede8}
+body[data-theme=color] .work{--bg:#fafbf7;--panel:#e3e9df;--line:#b6c4b8}
+body[data-theme=color] .audience{--bg:#29483d;--text:#f8f7ee;--muted:#d4e0d5;--line:#6d8979;--accent:#dfedc4}
+body[data-theme=color] .services{--bg:#e1e7dc;--panel:#f8faf4;--line:#acbba9}
+body[data-theme=color] .process{--bg:#20392f;--text:#f8f7ee;--muted:#d4e0d5;--line:#6d8979;--accent:#dfedc4}
+body[data-theme=color] .about{--bg:#f8f5ec;--panel:#e5e7da;--line:#c7ccb9}
+body[data-theme=color] .contact{--bg:#cbd9c9;--panel:#f8faf4;--line:#92aa94;--muted:#3e594a}
+body[data-theme=edge] .work{--bg:#f0f1e9;--text:#20231b;--muted:#555b49;--line:#b4bcaa;--accent:#455b0c;--on-accent:#fff;--panel:#dde2d2}
+body[data-theme=edge] .audience{--bg:#292d24;--text:#f3f5eb;--muted:#c4cbbb;--line:#68725c}
+body[data-theme=edge] .services{--bg:#121212;--panel:#292d24}
+body[data-theme=edge] .process{--bg:#d3f650;--text:#1d260a;--muted:#39471b;--line:#7f9639;--accent:#25320a}
+body[data-theme=edge] .about{--bg:#edeee5;--text:#20231b;--muted:#555b49;--line:#b4bcaa;--accent:#455b0c;--on-accent:#fff;--panel:#dde2d2}
+body[data-theme=edge] .contact{--bg:#292d24;--panel:#171a14;--line:#738163;--muted:#c4cbbb}
+main > section:not(.hero) > .section-heading > div > .eyebrow,
+.about > div > .eyebrow,.contact-copy > .eyebrow{display:inline-block;padding:8px 13px;border:1px solid var(--line);border-radius:30px;margin-bottom:28px;letter-spacing:.07em;color:var(--text)}
+.audience .three-cols{gap:0}
+.audience .three-cols article{padding:0 30px;border-left:1px solid var(--line)}
+.audience .three-cols article:first-child{padding-left:0;border-left:0}
+.audience .three-cols article:last-child{padding-right:0}
+.audience .index{color:var(--accent);font-size:1rem}
+.services .agreement{margin-top:25px;border:1px solid var(--line);border-left:4px solid var(--accent)}
+.process .steps article{border-top:2px solid var(--accent);padding-top:25px}
+.process .timing{margin-top:40px}
+.contact form{background:var(--panel);padding:32px;border:1px solid var(--line)}
+.contact input,.contact textarea,.contact select{background:var(--bg)}
+body[data-theme=color] .contact form{--bg:#fff;--text:#23392f;--muted:#52634f;--line:#acbba9}
+.lab-panel{background:var(--panel);border-top:2px solid var(--accent);padding:35px;margin-top:70px}
+.lab-panel .experiment-heading{margin:0 0 28px}
+.lab-panel .experiment{background:var(--bg);border:1px solid var(--line)}
+.work-cta{margin-top:40px;padding-top:28px}
+footer{background:#18251e;color:#d4ddcf;border-top:1px solid #52634f}
+body[data-theme=edge] footer{background:#10120e;color:#c4cbbb}
+/* Keep background edges still while section content enters. */
+.motion main > section.reveal,.motion main > section.reveal:not(.visible){opacity:1;transform:none}
+.motion main > section.reveal > *{transition:opacity .65s,transform .65s}
+.motion main > section.reveal:not(.visible) > *{opacity:0;transform:translateY(20px)}
+@media(max-width:900px){.audience .three-cols article{padding-inline:20px}.contact form{padding:24px}.lab-panel{padding:25px}}
+@media(max-width:600px){main > section:not(.hero){padding-top:65px;padding-bottom:65px}.audience .three-cols article,.audience .three-cols article:first-child,.audience .three-cols article:last-child{padding:25px 0 5px;border-left:0;border-top:1px solid var(--line)}.audience .three-cols article:first-child{padding-top:0;border-top:0}.contact form{padding:22px 16px}.lab-panel{padding:24px 16px;margin-top:45px}.lab-panel .experiment-heading p br{display:none}.contact-copy > .eyebrow,.about > div > .eyebrow,main > section:not(.hero) > .section-heading > div > .eyebrow{font-size:.68rem;padding:7px 10px}}
+@media(prefers-reduced-motion:reduce){.motion main > section.reveal:not(.visible) > *{opacity:1;transform:none;transition:none}}
+
+main > section.contact{background:var(--bg)}
+.hero > .eyebrow{gap:20px;align-items:flex-start}.hero > .eyebrow > span:first-child{max-width:560px;text-wrap:balance}.hero > .eyebrow > span:last-child{flex-shrink:0}
+@media(max-width:600px){.hero > .eyebrow{flex-direction:column;gap:12px}}
